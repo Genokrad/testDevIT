@@ -1,0 +1,205 @@
+/* Style refresh */
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+}
+.sub-title {
+  text-align: center;
+}
+
+/* НАСТРАИВАЕМ ПРАВИЛЬНЫй РАЗМЕР БЛОКОВ */
+
+html {
+  box-sizing: border-box;
+}
+
+/* НАСЛЕДОВАНИЕ */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* GRID */
+
+.container {
+  position: relative;
+  padding: 48px;
+  background-color: blanchedalmond;
+  display: grid;
+  grid-template-columns: repeat(auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 12px;
+}
+
+.header-box {
+  display: grid;
+  gap: 12px;
+}
+
+.header {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 24px;
+}
+.navigation {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 12px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 65% auto;
+  gap: 12px;
+  min-height: 300px;
+}
+
+.content {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 24px;
+  display: grid;
+  align-items: center;
+}
+
+.sidebar {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  padding: 12px;
+}
+
+.footer {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 12px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* FLEX */
+
+/* .container {
+  position: relative;
+  padding: 48px;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 24px;
+}
+.navigation {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 12px;
+}
+
+.main {
+  display: flex;
+  gap: 12px;
+  min-height: 300px;
+}
+
+.content {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 65%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.footer {
+  border: 2px solid black;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 12px;
+} */
+
+.square {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: red; */
+
+  animation-name: spin, change-background;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes change-background {
+  0% {
+    background-color: red;
+  }
+
+  25% {
+    background-color: orange;
+  }
+
+  75% {
+    background-color: green;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
