@@ -105,15 +105,18 @@
 // console.log(result);
 
 // task 5
-
+//// create a function that recursively converts an object into an array
 // const objectToArray = (obj) => {
+// // create empty arr
 //   let arr = [];
-
+////We're going through the object to retrieve the keys.
 //   for (let key in obj) {
+//// if the key value is an object , restart the function recursively
 //     if (typeof obj[key] === "object" && obj[key] !== null) {
 //       arr = [...arr, [key, objectToArray(obj[key])]];
 //       // arr.push([key, ...Object.entries(obj)]);
 //     } else {
+//// If the key is just a value, we move everything to the object we sprayed before to save progress.
 //       arr = [...arr, [key, obj[key]]];
 //     }
 //   }
@@ -150,26 +153,26 @@
 //   }
 // }
 
-// // создаем функцию прокладку которая будет отлавливать ошибки или возвращать результат
+// // create a gasket function that will catch errors or return the result
 // function reliableMultiply(a, b) {
-//   // запускаем вечный цикл который будет работать до тех пор пока значение true
+//   // start a perpetual loop that will run until the value is true
 //   while (true) {
-//     // Внутри цикла создаем обработчик ответов с помощью try catch
+//     // Inside the loop we create a response handler using try catch
 //     try {
-//       // если значение rand < 0.5 происходит умножение и мы получаем ответ 64
+//       // if rand < 0.5 the multiplication takes place and we get the answer 64
 //       console.log("primitiveMultiply");
 //       return primitiveMultiply(a, b);
 //     } catch (error) {
-//       // если значение rand > 0.85 то обьект error принадлежит классу ErrorException и выполнение цикла прекращается ошибкой
+//       // if rand > 0.85 then the error object belongs to the ErrorException class and the loop is terminated with an error
 //       if (error instanceof ErrorException) {
 //         console.log("ErrorException");
 //         throw error;
-//         // если значение rand < 0.85 и больше 0.5 то обьект error принадлежит классу NotificationException и выполнение вычисления primitiveMultiply повторяется
+//         // f rand < 0.85 and greater than 0.5, the error object belongs to NotificationException class and the primitiveMultiply calculation is repeated.
 //       } else if (error instanceof NotificationException) {
 //         console.log("NotificationException");
 //         return primitiveMultiply(a, b);
 //       } else {
-//         // этот блок не является обязательным в данном случае, так как не сработает не в одном из случаев, но в любом случае стоит его добавлять, так как не все ошибки мы можем продумать, но он точно предотвратит падение кода и гарантирует продолжение выполнение оставшегося кода на странице
+//         // this block is not obligatory in this case, as it will not work in any of the cases, but in any case it is worth adding it, as we can't think through all the errors, but it will definitely prevent code crash and guarantee that the remaining code on the page will continue executing
 //         throw error;
 //       }
 //     }
@@ -205,33 +208,33 @@
 //   return result;
 // };
 
-// // создаем функцию  рекурсии которая будет изначально возвращать массив с обьектами плоских путей
+// // create a recursion function that will initially return an array of flat path objects
 // const mapObject = (value) => {
-//   // перебераем
+//   // rebuild
 //   for (let key in value) {
-//     // Если значение ключа это обьект. не нал и не массив запускаем рекурсию
+//     // If the key value is an object. not a nal and not an array, run recursion.
 //     if (
 //       typeof value[key] === "object" &&
 //       value[key] !== null &&
 //       !Array.isArray(value[key])
 //     ) {
-//       // стинге присваиваем путь который привел к чему угодно кроме обькта
+//       // Sting assigns the path that led to anything other than the object.
 //       string = `${string}/${key}`;
 //       mapObject(value[key]);
 //     } else {
-//       // Если значение ключа это обьект. все что угодно кроме обьекта мы начинаем их обработку, создаем временный путь который в дальнейшем будем использовать в виде ключа.
-//       // временной строке присваиваем значение первого пути который нашли
+//       //If the value of the key is an object. anything other than an object we start processing them, create a temporary path which we will use as a key in the future.
+//       // assign the value of the first path we found to the temporary string
 //       temperalString = `${string}/${key}`;
 
 //       if (string !== temperalString) {
 //         const objToAdd = {};
-//         // если hasKeyByPath возвращает тру, то есть по этому пути есть что-то мы добавляем в массив обьект с путем в виде ключа и значением в виде значения.
+//         // if hasKeyByPath returns trudy, i.e. there is something on this path, we add an object with path as key and value as value to the array.
 //         if (hasKeyByPath(obj, temperalString)) {
 //           objToAdd[temperalString] = value[key];
 
 //           arr.push(objToAdd);
 //         }
-//         // Если путь привел в никуда мы будем отрезать по 1 ключу до тех пор пока не дойдем снова до правильного пути, после чего добавим его тоже в массив
+//         // If the path led to nowhere we will cut off 1 key at a time until we get to the correct path again, then add it to the array too
 //         if (!hasKeyByPath(obj, temperalString)) {
 //           objToAdd[slicer(temperalString)] = value[key];
 //           arr.push(objToAdd);
@@ -261,7 +264,7 @@
 
 //   return mergedObject;
 // };
-// // последнее действие - выносим обьекты путей из массива в обьект  спомощью функции resultMiddlewar
+// // last action - move path objects from the array to the object using the resultMiddlewar function
 // console.log(resultMiddlewar(mapObject(obj)));
 
 // // Outputs: {
@@ -272,7 +275,7 @@
 
 // task 8
 
-//В этом решении мы определяем внутреннюю функцию generateCombinations, которая рекурсивно создает комбинации чисел суммирующихся до remaining. Мы начинаем с 1 итерации (передавая start = 1), исключая нулевую итерацию, чтобы избежать повторений. Мы также фильтруем дубликаты из результатов, чтобы гарантировать, что каждая комбинация уникальна. Это делается с помощью метода filter, который проверяет, что текущая комбинация не совпадает с предыдущими комбинациями.После завершения цикла generateCombinations, uniqueResults содержит массив уникальных комбинаций чисел, суммирующихся до num.
+//In this solution, we define an internal function generateCombinations, which recursively creates combinations of numbers summing up to remaining. We start with 1 iteration (passing start = 1), excluding the zero iteration to avoid repetitions. We also filter out duplicates from the results to ensure that each combination is unique. This is done using the filter method, which checks that the current combination does not match previous combinations.After the generateCombinations loop completes, uniqueResults contains an array of unique combinations of numbers summed to num.
 
 // function combos(num) {
 //   function generateCombinations(remaining, currentCombo, start) {
