@@ -1,3 +1,12 @@
+// GIT
+
+// 1) В директории проекта ввести "git init"
+// 2) git add . git commit -m "Initial commit"
+// 3) связать репозитории "git remote add origin git@example.com:example/test.git"
+// 4) пуш кода в удаленный репозиторий "git push -u origin master"
+
+// После этого код должен появится в ветке "master"
+
 // // 1 task
 // // create function
 // const deepEqual = (firstObj, secondObj) => {
@@ -305,4 +314,24 @@
 // console.log(combos(3));
 // console.log(combos(10));
 
-// task 9 = решить не смог
+// task 9
+
+// function add(num) {
+//   let sum = num;
+
+//   function addNext(nextNum) {
+//     sum += nextNum;
+//     return addNext;
+//   }
+
+//   addNext.valueOf = function () {
+//     return sum;
+//   };
+
+//   return addNext;
+// }
+
+// console.log(Number(add(1)(2))); // Вывод: 3
+// console.log(Number(add(1)(2)(5))); // Вывод: 8
+// console.log(Number(add(1)(2)(-3)(4))); // Вывод: 4
+// console.log(Number(add(1)(2)(3)(4)(-5)));
